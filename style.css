@@ -189,6 +189,37 @@ pre, textarea { /* for code samples */
   box-shadow: inset 1px 1px 0 rgba(0,0,0,.2), inset -1px -1px 0 rgba(0,0,0,.04) ;
 }
 
+/* Blog styling */
+#blog p {
+  max-width: 60ch;
+  /* Limit line-length to 60 characters */
+  margin-bottom: 0.6em;
+  margin-top: 0.6em;
+}
+
+label.post-title {
+  font-size: 1.1em;
+  vertical-align: middle;
+  font-weight: 700;
+}
+
+label.post-title:before {
+  content: "";
+}
+
+label.post-title:after {
+  content: "";
+}
+
+#blog input,
+#blog input+.post-body {
+  display: none;
+}
+
+#blog input:checked+.post-body {
+  display: block;
+}
+
 /* Inline footnotes */
 
 label {
