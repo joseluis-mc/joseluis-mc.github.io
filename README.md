@@ -1,2 +1,2 @@
 # Sitio web de José Luis Méndez
-Este es el repositorio de mi página web personal.
+Este es el repositorio de mi página web personal. <p>Esta página está basada en la página web de <a href="https://carlineng.com/#home">Carlin Eng</a>, que a su vez está basada en el formato de <a href="https://github.com/cadars/john-doe/">John Doe</a>. Ese formato es un sitio web de un solo archivo escrito solamente con HTML y algo de CSS. Si quieres ver el código de este sitio lo podrás encontrar <a href="https://github.com/joseluis-mc/joseluis-mc.github.io">aquí</a>.</p>
