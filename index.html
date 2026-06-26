@@ -51,115 +51,102 @@
         
         <h1>Sobre esta página</h1>
         <p>Esta página está basada en la página web de <a href="https://carlineng.com/#home">Carlin Eng</a>, que a su vez está basada en el formato de <a href="https://github.com/cadars/john-doe/">John Doe</a>. Ese formato es un sitio web de un solo archivo escrito solamente con HTML y algo de CSS. Si quieres ver el código de este sitio lo podrás encontrar <a href="https://github.com/joseluis-mc/joseluis-mc.github.io">aquí</a>.</p>
-        
+
       </section>
       
       <section id="blog">
-        
-        <article>
-          <label for="primer-blog", class="post-title">Viajar en el tiempo</label>
-          <time datetime="2022-01-01">01.01.2023</time>
-          <input type="checkbox" id="primer-blog" />
-          <div class="post-body">
-            <p>
-              Este año (2023) voy a viajar en el tiempo. Creé mi sitio web personal (aunque todavía no me aviento a pagar mi propio dominio) y comenzaré un blog.
-              ¿Por qué?  Porque para cerrar el año 2022, escuché el mejor episodio de un podcast en todo el año y leí la mejor publicación en todo el año.  
-              El podcast fue el último episodio del año de <a href="https://www.youtube.com/@Waveform">Waveform</a>:
-              <a href="https://www.youtube.com/watch?v=26WvISI14g0&t=740s&ab_channel=WVFRMPodcast"><em>ICANN and the 7 Keys to the Internet</em></a>.
-              Y el artículo lo publicó mi sitio de noticias favorito, <a href="https://www.theverge.com/">The Verge</a>
-              (el cual curiosamente se está convirtiendo en un sitio de blogs): <a href="https://www.theverge.com/23513418/bring-back-personal-blogging"><em>Bring back personal blogging</em></a>.
-            </p>
-            <p>
-              Así que este es mi primer blog. Y como el resto de las personas que han comenzado un blog, quiero explicar por qué lo estoy haciendo y por qué creo 
-              que es importante que todas las personas publiquen y consuman contenido en este formato. Hablaré de 3 cosas:
-              <ol>
-                <li>¿Por qué es valioso tener un sitio web? (Inspirado por el episodio de Waveform)</li>
-                <li>¿Por qué es importante tener un blog? (Inspirado por el blog en The Verge)</li>
-                <li>¿Qué puedes esperar de este blog?</li>
-              </ol>
-            </p>
-            <h2>1️⃣ ¿Por qué es valioso tener un sitio web?</h2>
-            <p>
-              El episodio de Waveform cuenta la historia de cómo alguien quería comprar el dominio pizza.pizza, solamente para darse cuenta de que alguien ya lo tenía. 
-              Y por mera curiosidad se adentró en el mundo de los dominios en el Internet. Les recomiendo escuchar el podcast completo, pero el resumen es que lo que 
-              hoy conocemos como links, fueron una primera solución al problema de identificar fácilmente las direcciones IP de los sitios web existentes (que creían 
-              en cantidad rápidamente). Pero el problema empeoró cuando el Internet se abrió para el uso común. Rápidamente las personas comenzaron a solicitar (y 
-              obtener) nombres de dominios al mayoreo. La solución técnica para el problema de escala para llevar un control de todos los dominios que se solicitaban 
-              es interesante, pero no el punto que me resaltó cuando escuché el podcast.
-            </p>
-            <p>
-              Me di cuenta que un dominio es literalmente tu dirección en el Internet. Un dominio corto, memorable y directamente relacionado con tu persona es valioso. 
-              Y más en un mundo donde todo sucede en línea. Y me pregunté por qué no había pensado en conseguir un dominio o crear mi propio sitio web antes. La 
-              respuesta fue obvia, porque ya tengo múltiples direcciones en Internet. Cada una de mis cuentas en todas las redes sociales y aplicaciones que uso 
-              tienen un perfil y su propio enlace. Pero esas cuentas y esos perfiles, aunque sean míos, no son realmente míos. Son documentos que viven en el espacio 
-              de otra persona; yo solo estoy rentando un lugar en la casa de alguien más.
-            </p>
-            <h2>2️⃣ ¿Por qué es importante tener un blog?</h2>
-            <p>
-              El blog en The Verge habla de una época en el Internet donde todos (o la gran mayoría) de los usuarios tenían un blog. Publicaban sus ideas en el formato 
-              que querían para que los pudiera leer cualquiera que llegara a su sitio web. Sin intermediarios, sin aplicaciones, sin nada más que una caja de comentarios 
-              para que los lectores pudieran discutir la publicación. No había mecanismos de popularidad como likes y retweets. Las personas buscaban blogs que les 
-              interesaban, publicaban sus comentarios y respondían a otros. Antes del 2004, las personas controlaban su contenido de principio a fin. La moderación del 
-              contenido y los comentarios recaía en el dueño del sitio (mi casa, mis reglas).
-            </p>
-            <p>
-              Tener un blog se trata de poder. Tener el poder de hablar de lo que a ti te gusta en tus propios términos. Tener el poder de moderar discusiones sobre 
-              tu contenido. Tener el poder de crear y participar en comunidades digitales sin intermediarios. Por eso, además de crear mi página, estoy empezando este blog. 
-              Para hablar sobre mí y sobre lo que me interesa, de la forma que mejor me parece. Y si en el camino encuentro personas que quieren leer lo que pienso, 
-              será una gran alegría conectar con ellas. Así que viajaré en el tiempo unos 20 años, creando mi propio sitio con un blog para (tal vez) aportar al 
-              futuro del Internet.
-            </p>
-            <h2>3️⃣ ¿Qué puedes esperar de este blog?</h2>
-            <p>
-              Sobre el formato, trataré de ser breve, siempre siguiendo una estructura de un tema, tres ideas y una conclusión.
-            </p>
-            <p>
-              Sobre el contenido, hablaré de tecnología, política, negocios y de mi recorrido como corredor.
-            </p>
-            <p>
-              Sobre la discusión de mis publicaciones, por ahora no tendré comentarios, pero siempre podrás responderme a mi <a href="mailto: mendezcarrillojl@gmail.com">correo personal</a>.
-            </p>
-          </div>
+
+        <!--
+          Para agregar una entrada:
+            1. Crea un archivo HTML en la carpeta posts/ (ej. posts/mi-nuevo-post.html)
+            2. Copia uno de los <article> de abajo y actualiza:
+               - el atributo data-post con el nombre del archivo (sin la ruta)
+               - el título dentro de <h2>
+               - la fecha en <time>
+            3. El contenido se carga automáticamente al hacer clic.
+
+          Para eliminar una entrada, borra el <article> y el archivo de posts/.
+        -->
+
+        <article data-post="viajar-en-el-tiempo.html">
+          <h2 class="post-title">Viajar en el tiempo</h2>
+          <time datetime="2023-01-01">01.01.2023</time>
+          <div class="post-body"></div>
         </article>
 
       </section>
 
-      <section id="portfolio"> <!-- PORTFOLIO -->
+      <section id="portfolio">
 
         <div class="slides">
-          <figure><p>He colaborado en proyectos para crear tres tipos de productos: chatbots, tableros de datos y aplicaciones web.</p></figure>
-          <!-- Project: Seguridad Vial -->
+          <figure>
+            <p>He colaborado en proyectos para crear tres tipos de productos: chatbots, tableros de datos y aplicaciones web.</p>
+          </figure>
           <figure>
             <h1>Seguridad Vial - San Pedro Garza García</h1>
             <p>Tablero con visualizaciones utilizando los datos de hechos viales en el municipio entre 2015 y 2021.</p>
             <a href="https://seguridadvial.sanpedro.gob.mx/">Enlace</a>
           </figure>
-          <!-- Project: Street Market -->
           <figure>
-            <h1>Chatbot San Pedro Street & Food Market</h1>
+            <h1>Chatbot San Pedro Street &amp; Food Market</h1>
             <p>Chatbot en WhatsApp, Facebook e Instagram para registrar expositores, responder a preguntas frecuentes y recibir pagos.</p>
             <a href="https://instagram.com/streetmarketmx?igshid=YmMyMTA2M2Y=">Enlace</a>
           </figure>
-          <!-- Project: Esperanza -->
           <figure>
             <h1>Esperanza</h1>
             <p>Chatbot para el Poder Judicial de Puebla que informa a mujeres sobre cómo solicitar una orden de protección en ese Estado.</p>
             <a href="https://www.facebook.com/Esperanza-del-Poder-Judicial-del-Estado-de-Puebla-103129299112056">Enlace</a>
           </figure>
-          <!-- Project: Veamos Monterrey -->
           <figure>
             <h1>Veamos Monterrey</h1>
             <p>Chatbot para un programa que realiza exámenes de la vista y entrega lentes gratuitos a estudiantes de primaria y secundaria en Monterrey. El chatbot responde preguntas frecuentes y recibe solicitudes para participar en el programa.</p>
             <a href="https://wa.link/n5j63s">Enlace</a>
           </figure>
-          <!-- Project: Notaría #2 de Monterrey -->
           <figure>
             <h1>Chatbot Notaría #2 de Monterrey</h1>
             <p>Chatbot en WhatsApp y Facebook para responder a preguntas frecuentes, enviar requisitos por correo electrónico, agendar citas y recibir documentos para trámites.</p>
             <a href="https://www.facebook.com/notaria2mty">Enlace</a>
           </figure>
         </div>
+
       </section>
+
     </main>
+
+    <script>
+      // Blog post loader
+      // Clicking a post title fetches its HTML file and injects it inline.
+      // Posts live in the posts/ folder alongside index.html.
+
+      document.querySelectorAll('#blog article').forEach(function(article) {
+        var title = article.querySelector('.post-title');
+        var body  = article.querySelector('.post-body');
+        var file  = article.dataset.post;
+        var loaded = false;
+        var open   = false;
+
+        title.addEventListener('click', function() {
+          open = !open;
+          article.classList.toggle('is-open', open);
+
+          if (open && !loaded) {
+            body.innerHTML = '<span class="loading">Cargando\u2026</span>';
+            fetch('posts/' + file)
+              .then(function(r) {
+                if (!r.ok) throw new Error('No se pudo cargar el post.');
+                return r.text();
+              })
+              .then(function(html) {
+                body.innerHTML = html;
+                loaded = true;
+              })
+              .catch(function(err) {
+                body.innerHTML = '<p class="error">Error al cargar la entrada. Intenta de nuevo.</p>';
+              });
+          }
+        });
+      });
+    </script>
+
   </body>
 </html>
