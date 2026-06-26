@@ -1,19 +1,23 @@
-* { margin: 0; padding: 0; box-sizing: border-box;
-  
-  /* Color scheme */
-  
+/* ------- Variables ------- */
+
+:root {
   --textcolor: #121212;
   --bgcolor: #fff;
   --highlight: #2749c9;
-
 }
 
 @media (prefers-color-scheme: dark) {
-  * {
+  :root {
     --textcolor: #dadada;
     --bgcolor: #141414;
     --highlight: #ffc400;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -23,15 +27,14 @@ body {
   color: var(--textcolor);
   background: var(--bgcolor);
   position: relative;
-  max-width: 64em;  /* remove this for a full-width layout */
-  margin: 0 auto;  /* centers the layout */
+  max-width: 64em;
+  margin: 0 auto;
 }
 
 /* ------- Sections ------- */
 
 section {
   padding: calc(6em + 5vw) 5vw 8vw 5vw;
-  /* ! Everything below is needed ! */
   display: none;
   position: absolute;
   top: 0;
@@ -40,11 +43,11 @@ section {
   background: var(--bgcolor);
 }
 
-section:target { /* Show section */
+section:target {
   display: block;
 }
 
-section#home { /* Show #home by default */
+section#home {
   display: block;
 }
 
@@ -61,7 +64,7 @@ header {
 
 header h1 {
   font-size: 1em;
-  flex: 1; /* pushes nav to the right */
+  flex: 1;
   white-space: nowrap;
   padding: 0 5vw .5em 0;
 }
@@ -93,7 +96,7 @@ h2, h3, h4 {
 }
 
 p, ul, ol, article {
-  max-width: 60ch; /* Limit line-length to 60 characters */
+  max-width: 60ch;
   margin-bottom: .6em;
 }
 
@@ -147,7 +150,7 @@ blockquote {
 
 blockquote:before {
   content: "";
-  position:absolute;
+  position: absolute;
   left: 0;
   top: .3em;
   bottom: .3em;
@@ -162,7 +165,7 @@ img, svg, video, audio {
   height: auto;
   fill: currentColor;
 }
-  
+
 code, textarea {
   font-family: ui-monospace, SF Mono, Menlo, Monaco, Andale Mono, monospace;
   font-size: 1em;
@@ -170,59 +173,29 @@ code, textarea {
 }
 
 a code {
-  opacity:1;
+  opacity: 1;
 }
 
-pre, textarea { /* for code samples */
+pre, textarea {
   font-size: .9em;
   color: inherit;
-  line-height:inherit;
-  padding:.6em .9em;
+  line-height: inherit;
+  padding: .6em .9em;
   margin: .8em 0 1em 0;
   position: relative;
   display: block;
   width: 100%;
   white-space: pre;
-  border:0;
+  border: 0;
   border-radius: 4px;
-  background:rgba(255,255,100,.075);
-  box-shadow: inset 1px 1px 0 rgba(0,0,0,.2), inset -1px -1px 0 rgba(0,0,0,.04) ;
+  background: rgba(255,255,100,.075);
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,.2), inset -1px -1px 0 rgba(0,0,0,.04);
 }
 
-/* Blog styling */
-#blog p {
-  max-width: 60ch;
-  /* Limit line-length to 60 characters */
-  margin-bottom: 0.6em;
-  margin-top: 0.6em;
-}
+/* ------- Inline footnotes ------- */
+/* Scoped to .footnote so blog post titles don't inherit these styles */
 
-label.post-title {
-  font-size: 1.1em;
-  vertical-align: middle;
-  font-weight: 700;
-}
-
-label.post-title:before {
-  content: "";
-}
-
-label.post-title:after {
-  content: "";
-}
-
-#blog input,
-#blog input+.post-body {
-  display: none;
-}
-
-#blog input:checked+.post-body {
-  display: block;
-}
-
-/* Inline footnotes */
-
-label {
+label.footnote {
   cursor: pointer;
   vertical-align: super;
   line-height: 1;
@@ -230,24 +203,24 @@ label {
   padding-left: .1em;
 }
 
-label:hover {
+label.footnote:hover {
   color: var(--highlight);
 }
 
-label:before {content:"[";}
-label:after {content:"]";}
+label.footnote:before { content: "["; }
+label.footnote:after  { content: "]"; }
 
-label + input,
-label + input + small {
+label.footnote + input,
+label.footnote + input + small {
   display: none;
 }
 
 input:checked + small {
   display: block;
-  padding: .8em 0 1em 2.5vw;;
+  padding: .8em 0 1em 2.5vw;
 }
 
-/* Figures */
+/* ------- Figures ------- */
 
 figure {
   margin: 2em 0 1.5em 0;
@@ -263,31 +236,33 @@ figure figcaption {
 
 figure.video {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
 }
 
-figure.video iframe, figure.video object, figure.video embed {
+figure.video iframe,
+figure.video object,
+figure.video embed {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border: 0;
-  visibility: hidden; /* so loading="lazy" should work? */
+  visibility: hidden;
 }
 
 section:target iframe {
   visibility: visible;
 }
 
-/* External links */
+/* ------- External links ------- */
 
-a[href*="//"]:after { 
+a[href*="//"]:after {
   font-weight: 300;
   font-size: .85em;
-  content: "\2197"; /* top right arrow: ↗ */
+  content: "\2197";
   color: var(--textcolor);
   opacity: .25;
 }
@@ -297,14 +272,12 @@ a[href*="//"]:hover:after {
   opacity: 1;
 }
 
-/* File links */
+/* ------- File links ------- */
 
-a:before { 
+a:before {
   font-size: .7em;
   margin-right: .4em;
 }
-
-/* Add more filetypes here if you want */
 
 a[href$=".pdf"]:before { content: "PDF"; }
 a[href$=".txt"]:before { content: "TXT"; }
@@ -316,22 +289,80 @@ a[href$=".jpg"]:before,
 a[href$=".gif"]:before,
 a[href$=".png"]:before { content: "IMG"; }
 
-/* ------- News ------- */
+/* ------- Blog ------- */
 
-article + article {
-  margin-top: 4.5em;
+#blog article {
+  border-top: 1px solid;
+  border-color: currentColor;
+  opacity: 1;
+  padding-top: 1em;
+  margin-bottom: 1.8em;
 }
 
-article h2 {
+#blog article + article {
+  margin-top: 0;
+}
+
+#blog .post-title {
+  font-size: 1em;
   font-weight: 700;
-  margin: 0 0 1em 0;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
 }
 
-article time {
+#blog .post-title:hover {
+  color: var(--highlight);
+}
+
+/* Arrow indicator: ▶ closed, ▼ open */
+#blog .post-title:before {
+  content: "\25B6\FE0E  ";
+  font-size: .7em;
+  opacity: .5;
+  margin-right: .2em;
+  display: inline-block;
+  transition: transform .15s ease;
+}
+
+#blog article.is-open .post-title:before {
+  content: "\25BC\FE0E  ";
+}
+
+#blog time {
   margin-left: .6em;
   font-size: .8em;
   font-weight: 400;
   opacity: .7;
+}
+
+#blog .post-body {
+  display: none;
+  padding-top: 1.2em;
+}
+
+#blog article.is-open .post-body {
+  display: block;
+}
+
+#blog .post-body p,
+#blog .post-body ol,
+#blog .post-body ul {
+  margin-bottom: .8em;
+}
+
+#blog .post-body h2 {
+  margin-top: 1.8em;
+}
+
+#blog .loading {
+  opacity: .5;
+  font-size: .9em;
+}
+
+#blog .error {
+  color: #c00;
+  font-size: .9em;
 }
 
 /* ------- Images Grid ------- */
@@ -339,7 +370,7 @@ article time {
 .grid {
   display: grid;
   grid-gap: 5vmin;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 150px = minimum image size */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-auto-flow: dense;
   padding: 2em 0;
 }
@@ -353,7 +384,6 @@ article time {
   transform: scale(.975);
 }
 
-/* For a square ratio */
 .grid a:before {
   content: "";
   display: block;
@@ -391,7 +421,7 @@ article time {
 }
 
 .slides figure img {
-  max-height: 88vh; /* Adjust if needed */
+  max-height: 88vh;
 }
 
 .slides figure.cover {
@@ -433,8 +463,8 @@ article time {
   z-index: 4;
 }
 
-.lightbox:target:before { /* Loading spinner */
-  content:"";
+.lightbox:target:before {
+  content: "";
   height: 2em;
   width: 2em;
   animation: spin .8s infinite linear;
@@ -448,11 +478,11 @@ article time {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
+  0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-.lightbox:target:after { /* × to close */
+.lightbox:target:after {
   content: "\00D7";
   position: fixed;
   font-size: 2em;
@@ -470,41 +500,38 @@ article time {
 }
 
 @media only screen and (max-width: 540px) {
-  nav { width: 100%; } /* Fix for older webkit versions */
+  nav { width: 100%; }
 }
 
 /* ------- Print ------- */
 
 @media print {
-  
+
   nav, .lightbox:target:after { display: none; }
-  
+
   article, figure, img {
     page-break-inside: avoid;
     break-inside: avoid;
   }
-  
-  /* Inline footnotes */
-  
-  label + input + small { display: inline; }
-  label + input + small:before { content: "["; }
-  label + input + small:after { content: "]"; }
-  
-  /* Slides */
-  
+
+  label.footnote + input + small { display: inline; }
+  label.footnote + input + small:before { content: "["; }
+  label.footnote + input + small:after  { content: "]"; }
+
   .slides, .slides figure {
     position: relative;
     height: auto;
     padding: 0;
   }
 
-  .slides figure img, .slides figure.cover img {
-    max-height: auto;
+  .slides figure img,
+  .slides figure.cover img {
     position: relative;
     z-index: 1;
     width: auto;
     height: 100vh;
+    max-height: none;
     object-fit: contain;
   }
-    
+
 }
